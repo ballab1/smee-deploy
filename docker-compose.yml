@@ -4,13 +4,14 @@ services:
     smee:
         container_name: smee
         environment:
-            SMEE_PROXY: /jenkins
-            SMEE_TARGET: https://ubuntu-s3/
             SMEE_URL: https://smee.io/F9gFiEeTza0Po4Rd
+            SMEE_PROXY: /jenkins/github-webhook/
+            SMEE_TARGET: http://ubuntu-s3:8080
         hostname: smee
-        image: ${DOCKER_REGISTRY:-ubuntu-s2:5000/}${CONTAINER_OS:-alpine}/smee:${CONTAINER_TAG:-latest}
+        image: ${DOCKER_REGISTRY:-ubuntu-s2:5000/}${CONTAINER_OS:-alpine}/smee:${CONTAINER_TAG:-ff533a242843074b4fb7348f6f9120a8a0e2140c08f7a3b3dd1e3b1bae15ee13}
         logging:
             driver: json-file
             options:
                 max-file: "3"
                 max-size: "10m"
+        restart: unless-stopped               # only use when building a 'service container'
