@@ -8,14 +8,11 @@ environment:
 
 skip_wait:
     - blue
-    - grafana
-    - jbe
-    - jfk
-    - jira
-    - mysql
-    - pgadmin4
-    - supervisorm
-    - registry
+
+default_args:
+    cmd: 'deploy.restart'
+    latest: 'HEAD'
+    container_tag: 'dev'
 
 versions:
     repo: https://github.com/ballab1/versions
