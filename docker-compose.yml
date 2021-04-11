@@ -8,9 +8,8 @@ services:
             - ubuntu.home
             - home
         environment:
-            SMEE_URL: https://smee.io/F9gFiEeTza0Po4Rd
-            SMEE_PROXY: /jenkins/github-webhook/
-            SMEE_TARGET: http://ubuntu-s3.home:8080
+            SMEE_URL: https://smee.io/Zvo5ZZlapyJTW8Q9
+            SMEE_TARGET: https://s5.ubuntu.home:16443
         hostname: smee.home
         image: ${DOCKER_REGISTRY:-ubuntu-s2.home:5000/}${CONTAINER_OS:-alpine}/smee:${CONTAINER_TAG:-ff533a242843074b4fb7348f6f9120a8a0e2140c08f7a3b3dd1e3b1bae15ee13}
         logging:
