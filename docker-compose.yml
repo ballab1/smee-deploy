@@ -3,7 +3,7 @@ version: '3.3'
 services:
     smee:
         container_name: smee
-        dns: 10.1.3.1
+        dns: 10.3.1.4
         dns_search:
             - ubuntu.home
             - home
